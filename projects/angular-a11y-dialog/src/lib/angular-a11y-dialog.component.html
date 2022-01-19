@@ -1,0 +1,49 @@
+<portal-host *ngIf="mounted | async" [teleportTo]="portalTarget">
+  <div
+    #rootElement
+    [id]="id"
+    [class]="classNames?.container"
+    [attr.role]="role"
+    [attr.aria-labelledby]="fullTitleId"
+    aria-hidden="true"
+  >
+    <div
+      data-a11y-dialog-hide
+      tabIndex="-1"
+      [class]="classNames?.overlay"
+      (click)="role === 'alertdialog' ? undefined : close()"
+    ></div>
+    <div
+      role="document"
+      [class]="classNames?.document"
+    >
+      <button
+        *ngIf="closeButtonPosition == 'first'"
+        data-a11y-dialog-hide
+        type="button"
+        [attr.aria-label]="closeButtonLabel"
+        [class]="classNames?.closeButton"
+        (click)="close()"
+      >
+        <ng-content select="[closeButtonContentFirst]"></ng-content>
+      </button>
+      <p
+        [id]="fullTitleId"
+        [class]="classNames?.title"
+      >
+        <ng-content select="[title]"></ng-content>
+      </p>
+      <ng-content></ng-content>
+      <button
+        *ngIf="closeButtonPosition == 'last'"
+        data-a11y-dialog-hide
+        type="button"
+        [attr.aria-label]="closeButtonLabel"
+        [class]="classNames?.closeButton"
+        (click)="close()"
+      >
+        <ng-content select="[closeButtonContentLast]"></ng-content>
+      </button>
+    </div>
+  </div>
+</portal-host>

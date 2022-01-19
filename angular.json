@@ -3,5 +3,29 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "angular-a11y-dialog": {
+      "projectType": "library",
+      "root": "projects/angular-a11y-dialog",
+      "sourceRoot": "projects/angular-a11y-dialog/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/angular-a11y-dialog/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-a11y-dialog/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angular-a11y-dialog/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    }
+  },
+  "defaultProject": "angular-a11y-dialog"
 }
