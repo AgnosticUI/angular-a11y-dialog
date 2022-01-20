@@ -2,7 +2,9 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, OnDestroy, Output, 
 import { BehaviorSubject } from 'rxjs';
 import A11yDialog from 'a11y-dialog';
 
-type A11yDialogClassNames =
+export type roleType = 'dialog' | 'alertdialog';
+export type closeButtonPositionType = 'first' | 'last' | 'none';
+export type A11yDialogClassNames =
   | 'container'
   | 'overlay'
   | 'document'
@@ -36,10 +38,10 @@ export class AngularA11yDialogComponent implements OnInit, OnDestroy {
     title: 'dialog-title',
     closeButton: 'dialog-close',
   };
-  @Input() role?: 'dialog' | 'alertdialog' = 'dialog';
+  @Input() role: roleType = 'dialog';
   @Input() titleId?: string = '';
-  @Input() closeButtonLabel?: string = 'Close this dialog window';
-  @Input() closeButtonPosition?: 'first' | 'last' | 'none' = 'first';
+  @Input() closeButtonLabel: string = 'Close this dialog window';
+  @Input() closeButtonPosition: closeButtonPositionType = 'first';
 
   @Output() instance = new EventEmitter<A11yDialog>();
 
