@@ -1,7 +1,7 @@
 {
   "name": "angular-a11y-dialog",
   "description": "Angular component wrapping for a11y-dialog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/AgnosticUI/angular-a11y-dialog",
   "license": "MIT",
   "author": "Rob Levin (https://www.agnosticui.com)",
