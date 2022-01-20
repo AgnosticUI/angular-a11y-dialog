@@ -29,7 +29,7 @@ export class AngularA11yDialogComponent implements OnInit, OnDestroy {
   @Input() id!: string;
   @Input() appRoot?: string;
   @Input() dialogRoot?: string;
-  @Input() classNames?: ClassNamesShape = {
+  @Input() classNames: ClassNamesShape = {
     container: 'dialog-container',
     document: 'dialog-content',
     overlay: 'dialog-overlay',
