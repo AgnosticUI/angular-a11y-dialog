@@ -73,9 +73,9 @@ import A11yDialog from 'a11y-dialog';
     <div closeButtonContentFirst>
       <span>Close (only appears if closeButtonPosition="first" but that's the default)</span>
     </div>
-    <div title>
+    <ng-template #titleTemplate>
       <span data-test-id="dialogTitle">A11yDialog Test</span>
-    </div>
+    </ng-template>
     <div>
       <p>This is some content</p>
     </div>
@@ -256,14 +256,14 @@ export class AppComponent {
 ### `title`
 
 - **Name**: `title`
-- **Description**: The title of the dialog, mandatory in the document to provide context to assistive technology. Could be [hidden with CSS](https://hugogiraudel.com/2016/10/13/css-hide-and-seek/) (while remaining accessible).
+- **Description**: The title element for the dialog; mandatory in the document to provide context to assistive technology. Could be [hidden with CSS](https://hugogiraudel.com/2016/10/13/css-hide-and-seek/) (while remaining accessible).
 - **Usage**:
 
 ```html
 <angular-a11y-dialog>
-  <div title>
-    <span>Your title</span>
-  </div>
+    <ng-template #titleTemplate>
+      <span>Your title</span>
+    </ng-template>
   <!-- ... -->
 </angular-a11y-dialog>
 ```

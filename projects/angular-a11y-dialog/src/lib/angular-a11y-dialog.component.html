@@ -31,7 +31,7 @@
         [id]="fullTitleId"
         [class]="classNames?.title"
       >
-        <ng-content select="[title]"></ng-content>
+        <ng-content *ngTemplateOutlet="titleTemplate"></ng-content>
       </p>
       <ng-content></ng-content>
       <button

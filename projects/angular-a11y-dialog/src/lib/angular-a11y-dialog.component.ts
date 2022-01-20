@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, OnDestroy, Output, ViewChild } from '@angular/core';
+import { ContentChild, Component, ElementRef, EventEmitter, Input, OnInit, OnDestroy, Output, ViewChild } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import A11yDialog from 'a11y-dialog';
 
@@ -25,6 +25,9 @@ export class AngularA11yDialogComponent implements OnInit, OnDestroy {
   fullTitleId!: string;
 
   mounted = new BehaviorSubject<boolean>(false)
+
+  @ContentChild('titleTemplate')
+  public titleTemplate: any;
 
   @ViewChild('rootElement') rootElement!: ElementRef<HTMLDivElement>;
 
