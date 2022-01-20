@@ -1,6 +1,10 @@
 {
   "name": "angular-a11y-dialog",
+  "description": "Angular component wrapping for a11y-dialog",
   "version": "0.0.1",
+  "homepage": "https://github.com/AgnosticUI/angular-a11y-dialog",
+  "license": "MIT",
+  "author": "Rob Levin (https://www.agnosticui.com)",
   "peerDependencies": {
     "@angular/common": "^13.1.0",
     "@angular/core": "^13.1.0",
@@ -11,5 +15,14 @@
   },
   "devDependencies": {
     "a11y-dialog": "^7.3.0"
-  }
+  },
+  "keywords": [
+    "modal",
+    "dialog",
+    "accessibility",
+    "a11y",
+    "focus",
+    "vue",
+    "component"
+  ]
 }
