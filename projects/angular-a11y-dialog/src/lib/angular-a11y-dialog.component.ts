@@ -26,8 +26,24 @@ export class AngularA11yDialogComponent implements OnInit, OnDestroy {
 
   mounted = new BehaviorSubject<boolean>(false)
 
-  @ContentChild('titleTemplate')
-  public titleTemplate: any;
+  @ContentChild('title')
+  public title: any;
+
+  /**
+   * Should only be supplied if closeButtonPosition is 'first'
+   */
+  @ContentChild('closeButtonContentFirst')
+  public closeButtonContentFirst: any;
+
+  /**
+   * Should only be supplied if closeButtonPosition is 'last'
+   */
+  @ContentChild('closeButtonContentLast')
+  public closeButtonContentLast: any;
+
+  @ContentChild('mainContent')
+  public mainContent: any;
+
 
   @ViewChild('rootElement') rootElement!: ElementRef<HTMLDivElement>;
 
@@ -44,6 +60,11 @@ export class AngularA11yDialogComponent implements OnInit, OnDestroy {
   @Input() role: roleType = 'dialog';
   @Input() titleId?: string = '';
   @Input() closeButtonLabel: string = 'Close this dialog window';
+  /**
+   * We need this in addition to the templates closeButtonContentFirst
+   * and closeButtonContentLast as we need to know whether to generate
+   * the Button that wraps these.
+   */
   @Input() closeButtonPosition: closeButtonPositionType = 'first';
 
   @Output() instance = new EventEmitter<A11yDialog>();

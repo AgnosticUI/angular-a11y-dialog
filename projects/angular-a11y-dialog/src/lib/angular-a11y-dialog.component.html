@@ -25,15 +25,15 @@
         [class]="classNames?.closeButton"
         (click)="close()"
       >
-        <ng-content select="[closeButtonContentFirst]"></ng-content>
+        <ng-container *ngTemplateOutlet="closeButtonContentFirst"></ng-container>
       </button>
       <p
         [id]="fullTitleId"
         [class]="classNames?.title"
       >
-        <ng-content *ngTemplateOutlet="titleTemplate"></ng-content>
+        <ng-container *ngTemplateOutlet="title"></ng-container>
       </p>
-      <ng-content></ng-content>
+      <ng-container *ngTemplateOutlet="mainContent"></ng-container>
       <button
         *ngIf="closeButtonPosition == 'last'"
         data-a11y-dialog-hide
@@ -42,7 +42,7 @@
         [class]="classNames?.closeButton"
         (click)="close()"
       >
-        <ng-content select="[closeButtonContentLast]"></ng-content>
+        <ng-container *ngTemplateOutlet="closeButtonContentLast"></ng-container>
       </button>
     </div>
   </div>
