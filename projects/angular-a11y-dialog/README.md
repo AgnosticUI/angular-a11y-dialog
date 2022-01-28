@@ -65,7 +65,6 @@ import A11yDialog from 'a11y-dialog';
   </button>
   <angular-a11y-dialog
     id="a11y-dialog"
-    appRoot="#app"
     dialogRoot="#dialog-root"
     closeButtonPosition="last"
     (instance)="assignDialogInstance($event)"
@@ -133,21 +132,6 @@ In your `index.html`, add a container where your dialog will be rendered into. I
   <!-- ... -->
 </angular-a11y-dialog>
 ```
-
-### `appRoot`
-
-- **Property**: `appRoot`
-- **Type**: `String`, `Array<String>` — CSS Selector string.
-- **Required**: `true`
-- **Description**: The selector(s) `a11y-dialog` needs to disable when the dialog is open.
-- **Usage**:
-
-```html
-<angular-a11y-dialog appRoot="#app">
-  <!-- ... -->
-</angular-a11y-dialog>
-```
-
 ### `dialogRoot`
 
 - **Property**: `dialogRoot`

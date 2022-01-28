@@ -48,7 +48,6 @@ export class AngularA11yDialogComponent implements OnInit, OnDestroy {
   @ViewChild('rootElement') rootElement!: ElementRef<HTMLDivElement>;
 
   @Input() id!: string;
-  @Input() appRoot?: string;
   @Input() dialogRoot?: string;
   @Input() classNames: ClassNamesShape = {
     container: 'dialog-container',
@@ -72,7 +71,7 @@ export class AngularA11yDialogComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
-    this.portalTarget = this.dialogRoot || this.appRoot || 'document.body';
+    this.portalTarget = this.dialogRoot || 'document.body';
     this.fullTitleId = this.titleId || `${this.id}-title`;
 
     this.mounted.next(true);
